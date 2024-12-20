@@ -10,11 +10,11 @@ This Python script provides tools for solving ordinary differential equations (O
    - We assume there are slow and fast timescales such that $f(t) = f(t_s, t_f)$ where $t_s = \epsilon t$ and $t_f = t.$
    - Then
      $$
-     \begin{align}
-      \frac{d}{dt} &= \frac{\partial }{\partial t_s} \frac{\partial t_s}{t} + \frac{\partial }{\partial t_f} \frac{\partial t_f}{t} \\
-      &= \epsilon \frac{\partial }{\partial t_s} + \frac{\partial}{\partial t_f}\\
-      \frac{d^2}{dt^2} &= \epsilon^2\frac{\partial^2}{\partial t_s^2} + 2\frac{\partial^2}{\partial t_s \partial t_f} + \frac{\partial^2}{\partial t_f^2}
-     \end{align}
+     \begin{aligned}
+        \frac{d}{dt} &= \frac{\partial }{\partial t_s} \frac{\partial t_s}{t} + \frac{\partial }{\partial t_f} \frac{\partial t_f}{t} \\
+        &= \epsilon \frac{\partial }{\partial t_s} + \frac{\partial}{\partial t_f}\\
+        \frac{d^2}{dt^2} &= \epsilon^2\frac{\partial^2}{\partial t_s^2} + 2\frac{\partial^2}{\partial t_s \partial t_f} + \frac{\partial^2}{\partial t_f^2}
+       \end{aligned}
      $$
 
 - We expand the solution f and derivatives with these ansatz
