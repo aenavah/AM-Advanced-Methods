@@ -41,19 +41,13 @@ This Python script provides tools for solving ordinary differential equations (O
 
 ---
 
-### Prerequisites
-
-Python Packages:
-
-- **SymPy**:
-- **NumPy**
-- **IPython.display**: For rendering equations in LaTeX format.
-
----
-
 ## Example Workflow: WKB Approximation
 
 ```python
+  import sympy as sp
+  import numpy as np
+  import IPython.display #For rendering equations in LaTeX format.
+
   t = symbols('t')
   f_t = symbols('f_t')
   d2 = symbols("d2")
