@@ -1,4 +1,4 @@
-### Asymptotic_Substitution.ipynb
+# Asymptotic_Substitution.ipynb
 
 ## Overview
 
