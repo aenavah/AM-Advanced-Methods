@@ -1,3 +1,5 @@
+### Asymptotic_Substitution.ipynb
+
 ## Overview
 
 This Python script provides tools for solving ordinary differential equations (ODEs) using **Multiscale Expansion** and **WKB Approximation** techniques. These methods are commonly used in perturbation theory to approximate solutions of ODEs involving a small parameter $ \epsilon $.
@@ -9,11 +11,11 @@ This Python script provides tools for solving ordinary differential equations (O
    - We assume there exists a solution $f$ such that $f = f_0 + f_1 + \cdots$
    - We assume there are slow and fast timescales such that $f(t) = f(t_s, t_f)$ where $t_s = \epsilon t$ and $t_f = t.$
    - Then
-     $\begin{align*}
+     $\begin{align}
      \frac{d}{dt} &= \frac{\partial }{\partial t_s} \frac{\partial t_s}{t} + \frac{\partial }{\partial t_f} \frac{\partial t_f}{t} \\
      &= \epsilon \frac{\partial }{\partial t_s} + \frac{\partial}{\partial t_f}\\
      \frac{d^2}{dt^2} &= \epsilon^2\frac{\partial^2}{\partial t_s^2} + 2\frac{\partial^2}{\partial t_s \partial t_f} + \frac{\partial^2}{\partial t_f^2}
-     \end{align*}
+     \end{align}
      $
 
 - We expand the solution f and derivatives with these ansatz
@@ -27,9 +29,13 @@ This Python script provides tools for solving ordinary differential equations (O
 - We assume there exists a solution $f$ such that $f = f_0 + f_1 + \cdots$
 - We assume there are slow and fast timescales such that $f(t) = f(t_s, t_f)$ where $t_s = \frac{g(t)}{\epsilon}$ and $t_f = t$
 - Then
-  $\frac{d}{dt} = \frac{\partial }{\partial t_s} \frac{\partial t_s}{t} + \frac{\partial}{\partial t_f} \frac{\partial t_f}{t} $ \\
-  $= \frac{\partial}{\partial t_s} + \frac{g'(t)}{\epsilon} \frac{\partial}{\partial t_f} $\\
-  $\frac{\partial^2}{\partial t^2}&= \frac{\partial^2}{\partial t_s^2} + \frac{g''(t)}{\epsilon} \frac{\partial}{\partial t_f} + 2 \frac{g'(t)}{\epsilon} \frac{\partial^2}{\partial t_f \partial t_s} + \frac{(g'(t))^2}{\epsilon^2}\frac{\partial^2}{\partial t_f^2}$
+  $$
+  \begin{align}
+  \frac{d}{dt} &= \frac{\partial }{\partial t_s} \frac{\partial t_s}{t} + \frac{\partial}{\partial t_f} \frac{\partial t_f}{t}\\
+  &= \frac{\partial}{\partial t_s} + \frac{g'(t)}{\epsilon} \frac{\partial}{\partial t_f} \\
+  \frac{\partial^2}{\partial t^2}&= \frac{\partial^2}{\partial t_s^2} + \frac{g''(t)}{\epsilon} \frac{\partial}{\partial t_f} + 2 \frac{g'(t)}{\epsilon} \frac{\partial^2}{\partial t_f \partial t_s} + \frac{(g'(t))^2}{\epsilon^2}\frac{\partial^2}{\partial t_f^2}
+  \end{align}
+  $$
 - Now we substitute the expansions of $f$ and it's derivatives.
 - The script collects and displays the terms based on powers of $\epsilon$ in LaTeX format.
 
